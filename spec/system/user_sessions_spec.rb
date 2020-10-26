@@ -3,22 +3,14 @@ require 'rails_helper'
 RSpec.describe "UserSessions", type: :system do
 
   describe 'ログイン' do
-    context 'ログイン情報が正常のとき' do
+    context '入力値が正常のとき' do
       it 'ログインに成功する' do
-      end
-      it 'フラッシュメッセージが表示' do
-      end
-    end
-    context 'ログイン情報が異常のとき' do
-      it 'ログインに失敗する' do
-      end
-      it 'フラッシュメッセージが表示' do
+        expect 'フラッシュメッセージが表示'
       end
     end
-    context 'ログイン情報が未入力のとき' do
+    context '入力値が未入力のとき' do
       it 'ログインに失敗する' do
-      end
-      it 'フラッシュメッセージが表示' do
+        expect 'フラッシュメッセージが表示'
       end
     end
   end

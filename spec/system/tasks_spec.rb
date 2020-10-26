@@ -3,12 +3,12 @@ require 'rails_helper'
 RSpec.describe "Tasks", type: :system do
 
   describe 'ログイン前' do
-    context 'タスク作成するとき' do
-      it 'タスク作成が失敗' do
+    context 'タスク作成画面に遷移' do
+      it 'ログイン画面に遷移すること' do
       end
     end
-    context 'タスク編集するとき' do
-      it 'タスク編集が失敗' do
+    context 'タスク編集画面に遷移' do
+      it 'ログイン画面に遷移すること' do
       end
     end
   end
@@ -17,18 +17,14 @@ RSpec.describe "Tasks", type: :system do
     describe 'タスク作成' do
       context '入力値が正常のとき' do
         it 'タスク作成が成功' do
-        end
-        it 'フラッシュメッセージが表示' do
-        end
-        it '入力値が画面に表示されていること' do
+          expect 'フラッシュメッセージが表示'
+          expect '入力値が画面に表示されていること'
         end
       end
       context '入力値が異常のとき' do
         it 'タスク作成が失敗' do
-        end
-        it 'フラッシュメッセージが表示' do
-        end
-        it '入力値が画面に表示されていないこと' do
+          expect 'フラッシュメッセージが表示'
+          expect '入力値が画面に表示されていないこと'
         end
       end
     end
@@ -36,18 +32,14 @@ RSpec.describe "Tasks", type: :system do
     describe 'タスク編集' do
       context '入力値が正常のとき' do
         it 'タスク編集が成功' do
-        end
-        it 'フラッシュメッセージが表示' do
-        end
-        it '入力値が画面に表示されていること' do
+          expect 'フラッシュメッセージが表示'
+          expect '入力値が画面に表示されていること'
         end
       end
       context '入力値が異常のとき' do
         it 'タスク編集が失敗' do
-        end
-        it 'フラッシュメッセージが表示' do
-        end
-        it '入力値が画面に表示されていないこと' do
+          expect 'フラッシュメッセージが表示'
+          expect '入力値が画面に表示されていないこと'
         end
       end
       context '他のユーザータスク編集ページへ遷移したとき' do
@@ -57,13 +49,9 @@ RSpec.describe "Tasks", type: :system do
     end
   
     describe 'タスク削除' do
-      context '削除を実行したとき' do
-        it 'タスク削除が成功' do
-        end
-        it 'フラッシュメッセージが表示' do
-        end
-        it '削除したタスクが画面に表示されていないこと' do
-        end
+      it 'タスク削除が成功' do
+        expect 'フラッシュメッセージが表示'
+        expect '削除したタスクが画面に表示されていないこと'
       end
     end
   end
