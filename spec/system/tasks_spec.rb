@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Tasks", type: :system do
+  let(:task) { create(:task) }
 
   describe 'ログイン前' do
     context 'タスク作成画面に遷移' do
@@ -12,8 +13,7 @@ RSpec.describe "Tasks", type: :system do
     end
     context 'タスク編集画面に遷移' do
       it 'ログイン画面に遷移すること' do
-        task_edit = create(:task)
-        visit edit_task_path(task_edit)
+        visit edit_task_path(task)
         expect(page).to have_current_path "/login"
         expect(page).to have_content "Login required"
       end
@@ -56,8 +56,7 @@ RSpec.describe "Tasks", type: :system do
       context '入力値が重複しているとき' do
         it 'タスク作成が失敗' do
           visit new_task_path
-          task_first = create(:task)
-          fill_in "Title", with: "#{task_first.title}"
+          fill_in "Title", with: task.title
           click_button "Create Task"
           expect(page).to have_content "Title has already been taken"
           expect(page).to_not have_content "Title:"

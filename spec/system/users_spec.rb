@@ -25,7 +25,6 @@ RSpec.describe "Users", type: :system do
       end
       context 'メールアドレスが登録済みのとき' do
         it 'ユーザー作成が失敗' do
-          expect 'フラッシュメッセージが表示'
           user_duplicate = create(:user)
           visit sign_up_path
           fill_in "Email", with: user_duplicate.email
